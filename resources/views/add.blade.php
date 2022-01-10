@@ -1,32 +1,106 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add Task') }}
-        </h2>
-    </x-slot>
+<head>
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            background: rgb(24,26,27);
+        }
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
-            
-                <form method="POST" action="/task">
+        .bigContainer {
+            width: 100%;
+            text-align: center;
+            background: rgb(24,26,27);
+        }
+        
+        .header {
+            margin: 20px;
+            font-size: 30px;
+            border: none;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            padding-top: 3%;
+            text-decoration: none;
+        }
 
-                    <div class="form-group">
-                        <textarea name="description" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"  placeholder='Enter your task'></textarea>  
-                        @if ($errors->has('description'))
-                            <span class="text-danger">{{ $errors->first('description') }}</span>
-                        @endif
-                    </div>
+        .container {
+            margin-top: -10px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
 
+        .box {
+            width: 60%;
+            max-width: 650%;
+            border: 1px solid rgb(156, 156, 156);
+            border-radius: 25px;
+            background-color: rgb(35,38,40);
+            color: white;
+            margin: 5rem;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
 
-                    <div class="form-group">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Task</button>
-                    </div>
-                    {{ csrf_field() }}
-                </form>
-            </div>
+        .smallBox {
+            padding-bottom:2%;
+        }
+
+        .input {
+            width: 80%;
+            height: 60%;
+            background: gray;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            resize: none;
+            letter-spacing: 1px;
+        }
+        
+        .addBtn {
+            margin-top: 1%;
+            background: rgb(65, 65, 65);
+            color: white;
+            border-radius: 25px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 0 0 0 rgba(82, 82, 82, 0);
+            border: 1px solid rgb(168, 168, 168);
+            letter-spacing: 1px;
+        }
+
+        ::placeholder {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigContainer">
+        <a class="header" href="http://127.0.0.1:8000/dashboard"> Add Task </a>
+
+        <div class="container">
+            <form class="box" method="POST" action="/task">
+                <div class="smallBox">
+                    <textarea name="description" class="input" placeholder='Enter your task'></textarea>
+                    @if ($errors->has('description'))
+                        <span class="text-danger"> {{ $errors->first('description') }} </span>
+                    @endif
+                </div>
+                
+                <div class="smallBox">
+                    <button type="submit" class="addBtn"> Add Task </button>
+                <div>
+                {{ csrf_field() }}
+            </form>
         </div>
     </div>
-
-
-</x-app-layout>
+</body>
