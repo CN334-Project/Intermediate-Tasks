@@ -202,7 +202,6 @@
                 </span>
 
             </li>
-            <!-- data are comes from local storage -->
             @endforeach
         </ul>
         <div class="footer">
