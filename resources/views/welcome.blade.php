@@ -15,27 +15,31 @@
         </style>
 
         <style>
-            body {
-                font-family: 'Nunito';
-                background-color: rgba(20,20,20,1);
-                background-image: url("https://cdn.discordapp.com/attachments/597068750256078859/883317705229365298/237331534_1450046175349311_8728260869195022198_n.png")
+            html, body {
+                /* font-family: 'Nunito'; */
+                /* background-color: rgba(20,20,20,1); */
+                /* background-image: url("https://cdn.discordapp.com/attachments/597068750256078859/883317705229365298/237331534_1450046175349311_8728260869195022198_n.png") */
+                background-image: url("https://cdn.discordapp.com/attachments/930386949305425960/930388718555107338/jj-ying-WmnsGyaFnCQ-unsplash.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                height:100%;
             }
 
             .container {
-                text-align: center;
-                justify-content: center;
-                
+                justify-content: left;
+                padding-top: 2%;
             }
 
             .welcomeText {
-                text-align: center;
-                padding: 5%;
-                font-size: 40px;
-                text-shadow: 4px 4px black;
+                text-align: left;
+                padding-left: 2%;
+                font-size: 60px;
+
+                /* text-shadow: 4px 4px black; */
             }
 
             .welcomeText h1 {
-                color: white;
+                color: black;
             }
 
             .login a {
@@ -47,10 +51,10 @@
                 padding-top: 1%;
                 padding-bottom: 1%;
                 border: 2px solid white;
-                border-radius: 20px;
-                background-color: rgba(20,20,20,0.6);
+                border-radius: 8px;
+                background-color: rgba(20,20,20,0.9);
                 font-size: 20px;
-                transition: 0.3s;
+                transition: 0.5s;
             }
 
             .login a:hover{
@@ -62,31 +66,54 @@
                 padding-top: 1%;
                 padding-bottom: 1%;
                 border: 2px solid white;
-                border-radius: 20px;
-                background-color: rgba(20,20,20,0.9);
-                font-size: 25px;
+                border-radius: 10px;
+                background-color: rgba(20,20,20,0.6);
+                font-size: 20px;
             }
+
+            .rightSide {
+                position: fixed;
+                background: white;
+                height: 100%;
+                width: 100%;
+                margin-left: 50%;
+                top: 0;
+            }
+
+            .credit {
+                position: relative;
+                padding-top: 10%;
+                text-align: right;
+                width: 40%;
+            }
+
         </style>
     </head>
 
     <body class="antialiased">
-        <div class=welcomeText>
-            <h1>Welcome to my first Laravel's todolist</h1>
-        </div>
-        <div class="container">
-            @if (Route::has('login'))
-                <div class="login">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+        <div class="rightSide">
+            <div class=welcomeText>
+                <!-- <h1>Welcome to my first Laravel's todolist</h1> -->
+                <h1>INTERMEDIATE <br/> TASKLIST</h1>
+            </div>
+            <div class="container">
+                @if (Route::has('login'))
+                    <div class="login">
+                        @auth
+                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                        @else
+                            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">LOGIN</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">REGISTER</a>
+                            @endif
                         @endif
-                    @endif
-                </div>
-            @endif
-        </div>
+                    </div>
+                @endif
+            </div>
+            <div class="credit">
+                <h4> In cooperative with Taeshin Rochananond <br/> Chanantaphon Chansuksri <br/> Heammapoom Wittayawarojkit</h4>
+            </div>
+        </div>    
     </body>
 </html>
