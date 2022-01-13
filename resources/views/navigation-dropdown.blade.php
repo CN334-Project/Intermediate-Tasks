@@ -1,4 +1,15 @@
-<nav x-data="{ open: false }" class="bg-dark color-white border-b border-gray-100">
+<style>
+    nav {
+        background-color: #222831;
+        color: whitesmoke;
+    }
+
+    #header {
+        color: white;
+    }
+</style>
+
+<nav x-data="{ open: false }" class="color-white" style="font-size: 50px;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -11,9 +22,9 @@
                 </div> -->
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" >
+                    <x-jet-nav-link href="{{ route('homepage') }}" :active="request()->routeIs('homepage')" id="header">
+                        {{ __('Homepage') }}
                     </x-jet-nav-link>
                 </div>
             </div>

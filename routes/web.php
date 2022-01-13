@@ -20,7 +20,12 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::get('/homepage', function () {
+        return view('homepage');
+    })->name('homepage');
+    
     Route::get('/dashboard',[TasksController::class, 'index'])->name('dashboard');
+
 
     Route::get('/task',[TasksController::class, 'add']);
     Route::post('/task',[TasksController::class, 'create']);
