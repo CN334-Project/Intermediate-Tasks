@@ -91,6 +91,13 @@
             color: #f74d4d;
         }
 
+        #add {
+            background-color: #00ADB5;
+        }
+
+        #add:hover {
+            background-color: #00d4de;
+        }
     </style>
 
     <!-- <div class="py-12">
@@ -140,7 +147,7 @@
             <div class="flex-auto text-2xl mb-4">Tasks List</div>
 
             <div class="flex-auto text-right mt-2">
-                <a href="/task" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Add new Task</a>
+                <a href="/task" class="text-white font-bold py-2 px-4 rounded" id="add">Add new Task</a>
             </div>
         </div>
 

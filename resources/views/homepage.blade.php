@@ -11,16 +11,16 @@
         }
 
         h1 {
-            color: #00ADB5;
+            color: white;
         }
     </style>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden sm:rounded-lg">
-                <h1 class="text-center md:text-left px-6 text-xl">Homepage</h1>
+                <h1 class="text-center md:text-left px-6 text-xl">Todo Lists Website</h1>
                 <div class="px-6 mt-4">
-                    <p class="text-center md:text-left text-md text-green-700 text-md">Welcome {{Auth::user()->name}}!</p>
+                    <p class="text-center md:text-left text-md text-white text-md">Welcome {{Auth::user()->name}}!</p>
                 </div>
                 <div class="p-6 mt-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:grid-60 text-gray-700 uppercase">
                     <a href="{{route('dashboard')}}">
