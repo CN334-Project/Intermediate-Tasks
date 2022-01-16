@@ -3,13 +3,13 @@
         body {
             margin: 0;
             width: 100%;
-            background: rgb(24,26,27);
+            background: rgb(57,62,70);
         }
 
         .bigContainer {
             width: 100%;
             text-align: center;
-            background: rgb(24,26,27);
+            background: rgb(57,62,70);
         }
         
         .header {
@@ -23,6 +23,8 @@
             justify-content: center;
             padding-top: 3%;
             text-decoration: none;
+            font-family: "Helvetica";
+            letter-spacing: 1px;
         }
 
         .container {
@@ -37,8 +39,8 @@
             width: 60%;
             max-width: 650%;
             border: 1px solid rgb(156, 156, 156);
-            border-radius: 25px;
-            background-color: rgb(35,38,40);
+            border-radius: 15px;
+            background-color: rgb(255,255,255);
             color: white;
             margin: 5rem;
             padding-top: 2%;
@@ -52,12 +54,13 @@
         .input {
             width: 80%;
             height: 60%;
-            background: gray;
+            background: rgb(242,242,242);
             border: 1px solid black;
-            border-radius: 10px;
+            border-radius: 7px;
             padding: 15px;
-            color: white;
+            color: black;
             resize: none;
+            font-family: "Helvetica";
             letter-spacing: 1px;
         }
         
@@ -65,7 +68,7 @@
             margin-top: 1%;
             background: rgb(65, 65, 65);
             color: white;
-            border-radius: 25px;
+            border-radius: 10px;
             padding-left: 20px;
             padding-right: 20px;
             padding-top: 10px;
@@ -73,12 +76,13 @@
             cursor: pointer;
             overflow: hidden;
             box-shadow: 0 0 0 0 rgba(82, 82, 82, 0);
-            border: 1px solid rgb(168, 168, 168);
+            border: 1px solid rgb(65,65,65);
+            font-family: "Helvetica";
             letter-spacing: 1px;
         }
 
         ::placeholder {
-            color: white;
+            color: black;
         }
     </style>
 </head>
