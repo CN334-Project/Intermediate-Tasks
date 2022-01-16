@@ -1,7 +1,7 @@
 <style>
 .logo {
     margin: 10px;
-    font-size: 30px;
+    font-size: 50px;
     border: none;
     color: white;
     display: flex;
@@ -15,12 +15,13 @@
 html, body {
     background: rgb(24,26,27);
     /* height: 95.3vh; */
+    background: rgb(29,35,40);
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-;
+    font-family: "Helvetica"
 }
 
 .box {
@@ -46,7 +47,6 @@ html, body {
 .bigContainer{
     width: 100%;
     text-align: center;
-    background: rgb(24,26,27);
 }
 
 .input {
