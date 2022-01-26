@@ -55,13 +55,13 @@
 
         .todoList li span {
             position: absolute;
-            right: -80px;
+            right: 0px;
             color: white;
             width: auto;
             background: #00ADB5;
             border-radius: 0 3px 3px 0;
             cursor: pointer;
-            transition: all 0.3s ease;
+            
 
         }
 
