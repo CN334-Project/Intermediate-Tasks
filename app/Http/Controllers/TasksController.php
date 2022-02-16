@@ -62,5 +62,24 @@ class TasksController extends Controller
     {
     	return view('/dashboard');
     }
+
+    public function share(Request $request, Task $task)
+    {
+    	if(isset($_POST['facebookShare'])) {
+            $facebookShare_url = "https://www.facebook.com/sharer/sharer.php?u=127.0.0.1:8000&display=popup&quote={$task->description}" ;
+            header("Location: " . "$facebookShare_url");
+            exit();
+    	}
+    	else if (isset($_POST['twitterShare']))
+    	{
+            $twitterShare_url = "http://twitter.com/share?text={$task->description}&url=http://laravel&hashtags=todolist,jarntai,laravel" ;
+            header("Location: " . "$twitterShare_url");
+            exit();
+    	}    	
+        else {
+            return view('/dashboard');
+        }
+    }
+
 }
 

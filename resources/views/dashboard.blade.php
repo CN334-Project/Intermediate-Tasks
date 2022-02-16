@@ -159,6 +159,8 @@
                     <a href="/task/{{$task->id}}" name="edit"><i class="material-icons" id="editIcon">edit</i></a>
                     <form action="/task/{{$task->id}}" class="inline-block">
                         <button type="submit" name="delete" formmethod="POST"><i class="material-icons" id="deleteIcon">delete</i></button>
+                        <button type="submit" name="facebookShare" formmethod="POST"><i class="material-icons" id="deleteIcon">facebook</i></button>
+                        <button type="submit" name="twitterShare" formmethod="POST"><i class="material-icons" id="deleteIcon">share</i></button>
                         {{ csrf_field() }}
                     </form>
                 </span>
