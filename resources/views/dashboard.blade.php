@@ -55,13 +55,13 @@
 
         .todoList li span {
             position: absolute;
-            right: 0px;
+            right: -110px;
             color: white;
             width: auto;
             background: #00ADB5;
             border-radius: 0 3px 3px 0;
             cursor: pointer;
-            
+            transition: all 0.3s ease;
 
         }
 
@@ -88,6 +88,14 @@
         }
 
         #deleteIcon:hover {
+            color: #f74d4d;
+        }
+
+        #facebookIcon:hover {
+            color: #f74d4d;
+        }
+
+        #twitterIcon:hover {
             color: #f74d4d;
         }
 
@@ -159,8 +167,8 @@
                     <a href="/task/{{$task->id}}" name="edit"><i class="material-icons" id="editIcon">edit</i></a>
                     <form action="/task/{{$task->id}}" class="inline-block">
                         <button type="submit" name="delete" formmethod="POST"><i class="material-icons" id="deleteIcon">delete</i></button>
-                        <button type="submit" name="facebookShare" formmethod="POST"><i class="material-icons" id="deleteIcon">facebook</i></button>
-                        <button type="submit" name="twitterShare" formmethod="POST"><i class="material-icons" id="deleteIcon">share</i></button>
+                        <button type="submit" name="facebookShare" formmethod="POST" formtarget="_blank"><i class="material-icons" id="facebookIcon">facebook</i></button>
+                        <button type="submit" name="twitterShare" formmethod="POST" formtarget="_blank"><i class="fab fa-twitter" id="twitterIcon"></i></button>
                         {{ csrf_field() }}
                     </form>
                 </span>

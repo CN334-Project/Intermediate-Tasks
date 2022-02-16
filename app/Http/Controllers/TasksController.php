@@ -72,7 +72,7 @@ class TasksController extends Controller
     	}
     	else if (isset($_POST['twitterShare']))
     	{
-            $twitterShare_url = "http://twitter.com/share?text={$task->description}&url=http://laravel&hashtags=todolist,jarntai,laravel" ;
+            $twitterShare_url = "http://twitter.com/share?text=My Task: {$task->description}&url=Website: http://127.0.0.1:8000/&hashtags=todolist,jarntai,laravel" ;
             header("Location: " . "$twitterShare_url");
             exit();
     	}    	
