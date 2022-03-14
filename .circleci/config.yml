@@ -35,3 +35,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - unit-test
