@@ -18,4 +18,9 @@ class TaskTest extends TestCase
             'id','description', 'user_id', 'created_at', 'updated_at'
         ]), 1);
     }
+
+    public function testBasicTest()
+    {
+        $this->assertTrue(false);
+    }
 }
