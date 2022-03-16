@@ -55,7 +55,7 @@
 
         .todoList li span {
             position: absolute;
-            right: -110px;
+            right: 0px;
             color: white;
             width: auto;
             background: #00ADB5;
@@ -82,7 +82,7 @@
             align-items: center;
             justify-content: space-between;
         }
-        
+
         #editIcon:hover {
             color: #75f74d;
         }
@@ -113,7 +113,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
                 <div class="flex">
                     <div class="flex-auto text-2xl mb-4">Tasks List</div>
-                    
+
                     <div class="flex-auto text-right mt-2">
                         <a href="/task" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add new Task</a>
                     </div>
@@ -133,19 +133,19 @@
                                 {{$task->description}}
                             </td>
                             <td class="action">
-                                <a href="/done" name="done" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">done</a>            
+                                <a href="/done" name="done" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">done</a>
                                 <a href="/task/{{$task->id}}" name="edit" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</a>
                                 <form action="/task/{{$task->id}}" class="inline-block">
                                     <button type="submit" name="delete" formmethod="POST" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
                                     {{ csrf_field() }}
                                 </form>
-                    
+
                             </td>
                         </tr>
 
                     @endforeach
                     </tbody>
-                </table>             
+                </table>
             </div>
         </div>
     </div> -->
