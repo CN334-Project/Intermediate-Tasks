@@ -6,16 +6,16 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
-class UserTest extends TestCase
+class TaskTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
     /** @test  */
-    public function users_database_has_expected_columns()
+    public function Tasks_database_has_expected_columns()
     {
         $this->assertTrue( 
-          Schema::hasColumns('users', [
-            'id','name', 'email', 'email_verified_at', 'password'
+          Schema::hasColumns('tasks', [
+            'id','description', 'user_id', 'created_at', 'updated_at'
         ]), 1);
     }
 }
