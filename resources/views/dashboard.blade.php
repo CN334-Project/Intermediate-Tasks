@@ -164,11 +164,11 @@
             @foreach(auth()->user()->tasks as $task)
             <li class="action">{{$task->description}}
                 <span>
-                    <a href="/task/{{$task->id}}" name="edit"><i class="material-icons" id="editIcon">edit</i></a>
+                    <a href="/task/{{$task->id}}" name="edit" id="edit"><i class="material-icons" id="editIcon">edit</i></a>
                     <form action="/task/{{$task->id}}" class="inline-block">
                         <button type="submit" name="delete" formmethod="POST"><i class="material-icons" id="deleteIcon">delete</i></button>
-                        <button type="submit" name="facebookShare" formmethod="POST" formtarget="_blank"><i class="material-icons" id="facebookIcon">facebook</i></button>
-                        <button type="submit" name="twitterShare" formmethod="POST" formtarget="_blank"><i class="fab fa-twitter" id="twitterIcon"></i></button>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=127.0.0.1:8000&display=popup&quote={{$task->description}}"><i class="material-icons" id="facebookIcon">facebook</i></a>
+                        <a href="http://twitter.com/share?text=My Task: {{$task->description}}&url=Website: http://127.0.0.1:8000/&hashtags=todolist,jarntai,laravel"><i class="fab fa-twitter" id="twitterIcon"></i></a>
                         {{ csrf_field() }}
                     </form>
                 </span>
