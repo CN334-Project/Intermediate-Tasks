@@ -15,10 +15,15 @@ class TasksTableSeeder extends Seeder
      */
     public function run()
     {
+        // User::create([
+        //     "description"=> "Ez",
+        //     "user_id" => 1
+        // ]);
+
         //Create Task Seeder
         Task::create([
             "description"=> "Ez",
-            "user_id" => 1
+            "user_id" => 10
         ]);
     }
 }
