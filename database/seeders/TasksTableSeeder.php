@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Task;
+use App\Models\User;
 
 class TasksTableSeeder extends Seeder
 {
