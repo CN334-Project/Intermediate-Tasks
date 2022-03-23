@@ -11,7 +11,7 @@ class UserTest extends TestCase
     use RefreshDatabase, WithFaker;
 
     //Schema Test all columns
-    public function users_database_has_expected_columns()
+    public function test_users_database_has_expected_columns()
     {
         $this->assertTrue(
           Schema::hasColumns('users', [
@@ -19,22 +19,33 @@ class UserTest extends TestCase
         ]), 1);
     }
 
-    public function stupidfuck()
+    //Schema Test has name column
+    public function test_users_database_has_name_column()
     {
         $this->assertTrue(
             Schema::hasColumn('users', 'name'),1
         );
     }
 
-    public function kuy()
+    //Schema Test has email column
+    public function test_users_database_has_email_column()
     {
-        $this->assertTrue(false);
+        $this->assertTrue(
+            Schema::hasColumn('users', 'email'),1
+        );
     }
 
-    // public function users_database_has_email_column()
-    // {
-    //     $this->assertTrue(
-    //         Schema::hasColumn('users', 'email'),1
-    //     );
-    // }
+    //Schema Test has password column
+    public function test_users_database_has_password_column()
+    {
+        $this->assertTrue(
+            Schema::hasColumn('users', 'password'),1
+        );
+    }
+
+    //Test name value is null
+    public function test_users_name_is_null()
+    {
+        # code...
+    }
 }
