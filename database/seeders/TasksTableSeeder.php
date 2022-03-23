@@ -16,6 +16,7 @@ class TasksTableSeeder extends Seeder
      */
     public function run()
     {
+        //Create User
         User::create([
             "id" => 1,
             "name" => "Tae",
@@ -37,19 +38,49 @@ class TasksTableSeeder extends Seeder
             "password" => "password"
         ]);
 
-        //Create Task Seeder
+        //Create Task for each User
         Task::create([
-            "description"=> "tae's task",
+            "description"=> "tae's task1",
             "user_id" => 1
         ]);
 
         Task::create([
-            "description"=> "man's task",
+            "description"=> "tae's task2",
+            "user_id" => 1
+        ]);
+
+        Task::create([
+            "description"=> "tae's task3",
+            "user_id" => 1
+        ]);
+
+        Task::create([
+            "description"=> "man's task1",
             "user_id" => 2
         ]);
 
         Task::create([
-            "description"=> "dome's task",
+            "description"=> "man's task2",
+            "user_id" => 2
+        ]);
+
+        Task::create([
+            "description"=> "man's task3",
+            "user_id" => 2
+        ]);
+
+        Task::create([
+            "description"=> "dome's task1",
+            "user_id" => 3
+        ]);
+
+        Task::create([
+            "description"=> "dome's task2",
+            "user_id" => 3
+        ]);
+
+        Task::create([
+            "description"=> "dome's task3",
             "user_id" => 3
         ]);
     }
