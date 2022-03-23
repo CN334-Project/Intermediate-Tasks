@@ -93,6 +93,11 @@ jobs:
             touch database/database.sqlite
             php artisan migrate --env=testing
 
+       - run:
+          name: "Run database seeder"
+          command: |
+            php artisan db:seed --class=TasksTableSeeder
+
       # run tests with phpunit
       - run:
           name: "Run Tests"
