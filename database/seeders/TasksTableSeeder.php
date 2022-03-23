@@ -15,15 +15,41 @@ class TasksTableSeeder extends Seeder
      */
     public function run()
     {
-        // User::create([
-        //     "description"=> "Ez",
-        //     "user_id" => 1
-        // ]);
+        User::create([
+            "id" => 1,
+            "name" => "Tae",
+            "email" => "tae@mail.com",
+            "password" => "password"
+        ]);
+
+        User::create([
+            "id" => 2,
+            "name" => "Man",
+            "email" => "man@mail.com",
+            "password" => "password"
+        ]);
+
+        User::create([
+            "id" => 3,
+            "name" => "Dome",
+            "email" => "dome@mail.com",
+            "password" => "password"
+        ]);
 
         //Create Task Seeder
         Task::create([
-            "description"=> "Ez",
-            "user_id" => 10
+            "description"=> "tae's task",
+            "user_id" => 1
+        ]);
+
+        Task::create([
+            "description"=> "man's task",
+            "user_id" => 2
+        ]);
+
+        Task::create([
+            "description"=> "dome's task",
+            "user_id" => 3
         ]);
     }
 }
