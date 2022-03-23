@@ -19,13 +19,13 @@ class TaskTest extends TestCase
         ]), 1);
     }
 
-    public function testDatabase()
-    {
-        $this->assertDatabaseHas('users', [
-            'email' => 'sally@example.com',
-        ]);
-    }
-    
+    // public function testDatabase()
+    // {
+    //     $this->assertDatabaseHas('users', [
+    //         'email' => 'sally@example.com',
+    //     ]);
+    // }
+
     // public function testBasicTest()
     // {
     //     $this->assertTrue(false);
