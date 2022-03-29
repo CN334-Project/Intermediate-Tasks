@@ -1,29 +1,35 @@
 <?php
+
 namespace Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 use Tests\TestCase;
+
 
 class UserTest extends TestCase
 {
-    use RefreshDatabase, WithFaker;
+    use WithFaker, RefreshDatabase;
 
     //Schema Test all columns
     public function test_users_database_has_expected_columns()
     {
         $this->assertTrue(
-          Schema::hasColumns('users', [
-            'id','name', 'email', 'email_verified_at', 'password'
-        ]), 1);
+            Schema::hasColumns('users', [
+                'id', 'name', 'email', 'email_verified_at', 'password'
+            ]),
+            1
+        );
     }
 
     //Schema Test has name column
     public function test_users_database_has_name_column()
     {
         $this->assertTrue(
-            Schema::hasColumn('users', 'name'),1
+            Schema::hasColumn('users', 'name'),
+            1
         );
     }
 
@@ -31,7 +37,8 @@ class UserTest extends TestCase
     public function test_users_database_has_email_column()
     {
         $this->assertTrue(
-            Schema::hasColumn('users', 'email'),1
+            Schema::hasColumn('users', 'email'),
+            1
         );
     }
 
@@ -39,13 +46,40 @@ class UserTest extends TestCase
     public function test_users_database_has_password_column()
     {
         $this->assertTrue(
-            Schema::hasColumn('users', 'password'),1
+            Schema::hasColumn('users', 'password'),
+            1
         );
     }
 
-    //Test name value is null
-    public function test_users_name_is_null()
+
+    public function test_create_user_in_database()
     {
-        # code...
+        User::factory()->create([
+            'email' => 'Taeshinn@gmail.com',
+        ]);
+
+        $this->assertDatabaseHas('users', ['email' => 'Taeshinn@gmail.com']);
     }
+    public function test_create_user_with_thai_email_in_database()
+    {
+        User::factory()->create([
+            'email' => 'เต้ชิน@gmail.com',
+        ]);
+
+        $this->assertDatabaseHas('users', ['email' => 'เต้ชิน@gmail.com']);
+    }
+
+    public function test_model_is_missing()
+    {
+        $user = User::factory()->create();
+        $user->delete();
+        $this->assertModelMissing($user);
+    }
+
+    public function test_model_is_not_missing()
+    {
+        $user = User::factory()->create();
+        $this->assertModelExists($user);
+    }
+
 }
