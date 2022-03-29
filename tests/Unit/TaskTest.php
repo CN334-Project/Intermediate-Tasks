@@ -5,16 +5,16 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
-use App\models\Task;
+use App\Models\Task;
 
 class TaskTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
-    // Task Schema Test 
+    // Task Schema Test
     public function tasks_database_has_expected_columns()
     {
-        $this->assertTrue( 
+        $this->assertTrue(
           Schema::hasColumns('tasks', [
             'id','description', 'user_id', 'created_at', 'updated_at'
         ]), 1);
