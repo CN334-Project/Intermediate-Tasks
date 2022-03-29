@@ -52,7 +52,7 @@ jobs:
       # run tests with phpunit
       - run:
           name: "Run Tests"
-          command: ./vendor/bin/phpunit --testsuite Unit
+          command: php artisan test --testsuite Unit
 
   feature-test:
     docker:
@@ -106,7 +106,7 @@ jobs:
       # run tests with phpunit
       - run:
           name: "Run Tests"
-          command: ./vendor/bin/phpunit --testsuite Feature
+          command: php artisan test --testsuite Feature
 workflows:
   tasklist-test-workflow:
     jobs:
