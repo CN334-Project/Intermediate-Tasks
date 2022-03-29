@@ -5,6 +5,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
+use App\models\Task;
 
 class TaskTest extends TestCase
 {
@@ -52,15 +53,21 @@ class TaskTest extends TestCase
         );
     }
 
-    // public function testDatabase()
-    // {
-    //     $this->assertDatabaseHas('users', [
-    //         'email' => 'sally@example.com',
-    //     ]);
-    // }
+    public function test_create_task_in_database()
+    {
+        Task::factory()->create([
+            'description' => 'test desc',
+        ]);
 
-    // public function testBasicTest()
-    // {
-    //     $this->assertTrue(false);
-    // }
+        $this->assertDatabaseHas('tasks', ['description' => 'test desc']);
+    }
+
+    public function test_delete_task_in_database()
+    {
+        $task = Task::factory()->create();
+
+        $task -> delete();
+
+        $this->assertModelMissing($task);
+    }
 }
