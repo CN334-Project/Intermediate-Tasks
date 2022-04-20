@@ -15,7 +15,7 @@ class TaskFactory extends Factory
         return [
             'description' => $this->faker->text,
             'user_id' => $this->faker->randomDigit,
-            'id' => $this->faker->randomDigit,
+            'id' => $this->faker->unique()->ean8,
         ];
     }
 }
