@@ -6,8 +6,14 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\User;
 use Tests\TestCase;
 
-class UserTaskIntegrationTest extends TestCase {
+class UserTaskIntegrationTest extends TestCase
+{
+    use RefreshDatabase, WithFaker;
 
+    public function test_assert()
+    {
+        $this->assertTrue(true);
+    }
     //Test user can create 0 task
 
     //Test user can create 1000 task
