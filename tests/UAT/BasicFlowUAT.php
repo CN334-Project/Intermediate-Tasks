@@ -3,8 +3,6 @@
 use Tests\TestCase;
 
 class BaseFlowUAT extends TestCase {
-    //Show Task
-
     //Create Task
 
     //Edit Task
@@ -14,12 +12,6 @@ class BaseFlowUAT extends TestCase {
     //Register
 
     //Login
-
-    //Change Password
-
-    //Change Email
-
-    //Delete Account
 
 }
 ?>

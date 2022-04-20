@@ -22,7 +22,6 @@ class RegisterBAT extends TestCase {
 
     //Register with invalid name input
 
-    //Register with email is exists in database
 
 }
 ?>
