@@ -26,6 +26,19 @@ class BaseFlowUAT extends TestCase
 
     //Edit Task
 
+    public function test_edit_task()
+    {
+        $task = Task::factory()->create([
+            'description' => 'test desc',
+            'user_id' => 1,
+            'id' => 1,
+        ]);
+        $task->description = 'test edit';
+        $task->save();
+
+        $this->assertDatabaseHas('tasks', ['description' => 'test edit', 'user_id' => 1, 'id' => 1]);
+    }
+
     //Delete Task
     public function test_delete_task_in_database()
     {
@@ -38,10 +51,20 @@ class BaseFlowUAT extends TestCase
     public function test_user_can_register()
     {
         $user = User::factory()->create();
-        // error_log($user);
-        $this->assertTrue(true);
+        $this->assertDatabaseHas('users', ['name' => $user->name,'email' => $user->email,'password' => $user->password]);
     }
 
     //Login
+    public function test_user_can_login()
+    {
+        $user = User::factory()->create();
 
+        $this->post('/login', [
+            'email' => $user->email,
+            'password' => $user->password,
+            'name' => $user->name
+        ]);
+
+        $this->assertGuest();
+    }
 }
