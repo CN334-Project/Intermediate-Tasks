@@ -14,8 +14,8 @@ class UserTaskIntegrationTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
-    //Test user can create 0 task
-    public function test_user_can_create_0_task()
+    //Test user cannot create 0 task
+    public function test_user_cannot_create_0_task()
     {
         $user = User::factory()->create();
         $task = Task::factory()->count(0)->create(['user_id' => $user->id]);
