@@ -8,15 +8,16 @@ use App\Models\Task;
 
 class EditTaskBAT extends TestCase {
 
+    use RefreshDatabase, WithFaker;
+
     public function test_edit_description_with_valid_input()
     {
         $task = Task::factory()->create([
             'description' => 'test desc',
         ]);
 
-        $task -> edit([
-            'description' => 'Hello world',
-        ]);
+        $task -> description = 'Hello world';
+        $task -> save();
 
         $this->assertDatabaseHas('tasks', ['description' => 'Hello world']);
     }
@@ -27,9 +28,8 @@ class EditTaskBAT extends TestCase {
             'description' => 'test desc',
         ]);
 
-        $task -> edit([
-            'description' => '你好世界 操你妈死',
-        ]);
+        $task -> description = '你好世界 操你妈死';
+        $task -> save();
 
         $this->assertDatabaseHas('tasks', ['description' => '你好世界 操你妈死']);
     }
@@ -40,9 +40,8 @@ class EditTaskBAT extends TestCase {
             'description' => 'test desc',
         ]);
 
-        $task -> edit([
-            'description' => '',
-        ]);
+        $task -> description = '';
+        $task -> save();
 
         $this->assertDatabaseHas('tasks', ['description' => '']);
     }
@@ -53,11 +52,10 @@ class EditTaskBAT extends TestCase {
             'description' => 'test desc',
         ]);
 
-        $task -> edit([
-            'description' => 'asdoifjapsodihgfpiasudhfgpouashdfpouahsdpifuhaspidufhapisduhfpiasuhdfpiasuhdfpiaushdpfiuhasdipufhapisudhfpiausdhfpiauhsdpfiuhasdpiufghaspdughfpaisudhfgpiaushdgfpiu',
-        ]);
+        $task -> description = 'asdoifjapsodihgfpiasudhfgpouashdfpouahsdpifuhaspidufhapisduhfpiasuhdfpiasuhdfpiaushdpfiuhasdipufhapisudhfpiausdhfpiauhsdpfiuhasdpiufghaspdughfpaisudhfgpiaushdgfpiu';
+        $task -> save();
 
-        $this->assertDatabaseHas('tasks', ['description' => '']);
+        $this->assertDatabaseHas('tasks', ['description' => 'asdoifjapsodihgfpiasudhfgpouashdfpouahsdpifuhaspidufhapisduhfpiasuhdfpiasuhdfpiaushdpfiuhasdipufhapisudhfpiausdhfpiauhsdpfiuhasdpiufghaspdughfpaisudhfgpiaushdgfpiu']);
     }
 }
 ?>
