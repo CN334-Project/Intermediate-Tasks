@@ -51,7 +51,7 @@ class UserTest extends TestCase
         );
     }
 
-
+    //Test user could create email in database
     public function test_create_user_in_database()
     {
         User::factory()->create([
@@ -60,6 +60,8 @@ class UserTest extends TestCase
 
         $this->assertDatabaseHas('users', ['email' => 'Taeshinn@gmail.com']);
     }
+
+    //Test user could create email with thai language in database
     public function test_create_user_with_thai_email_in_database()
     {
         User::factory()->create([
@@ -69,6 +71,7 @@ class UserTest extends TestCase
         $this->assertDatabaseHas('users', ['email' => 'เต้ชิน@gmail.com']);
     }
 
+    //Test model is missing when delete it
     public function test_model_is_missing()
     {
         $user = User::factory()->create();
@@ -76,6 +79,7 @@ class UserTest extends TestCase
         $this->assertModelMissing($user);
     }
 
+    //Test model is exists when creating user model
     public function test_model_is_not_missing()
     {
         $user = User::factory()->create();
