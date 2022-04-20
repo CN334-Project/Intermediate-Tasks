@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\User;
 use Tests\TestCase;
 
-class UserIntegrationTest extends TestCase {
+class UserTaskIntegrationTest extends TestCase {
 
     //Test user can create 0 task
 
